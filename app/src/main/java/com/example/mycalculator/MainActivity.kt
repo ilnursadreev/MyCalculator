@@ -13,50 +13,55 @@ class MainActivity : AppCompatActivity() {
 
     var expression: String = ""
 
+    private fun render() {
+        tv_result.text = expression
+    }
+
     private fun initClickListener() {
-        one.setOnClickListener { addString(getString(R.string.one)) }
-        two.setOnClickListener { addString(getString(R.string.two)) }
-        three.setOnClickListener { addString(getString(R.string.three)) }
-        four.setOnClickListener { addString(getString(R.string.four)) }
-        five.setOnClickListener { addString(getString(R.string.five)) }
-        six.setOnClickListener { addString(getString(R.string.six)) }
-        seven.setOnClickListener { addString(getString(R.string.seven)) }
-        eight.setOnClickListener { addString(getString(R.string.eight)) }
-        nine.setOnClickListener { addString(getString(R.string.nine)) }
-        zero.setOnClickListener { addString(getString(R.string.zero)) }
-        equally.setOnClickListener { calculate() }
-        AC.setOnClickListener { allClean() }
-        delete.setOnClickListener { deleteLastChar() }
-        percent.setOnClickListener { addOperation(getString(R.string.percent)) }
-        division.setOnClickListener { addOperation(getString(R.string.division)) }
-        plus.setOnClickListener { addOperation(getString(R.string.plus)) }
-        minus.setOnClickListener { addOperation(getString(R.string.minus)) }
-        multiplication.setOnClickListener { addOperation(getString(R.string.multiplication)) }
-        dot.setOnClickListener { addString(getString(R.string.dot)) }
+        btn_one.setOnClickListener { addString(getString(R.string.one)) }
+        btn_two.setOnClickListener { addString(getString(R.string.two)) }
+        btn_three.setOnClickListener { addString(getString(R.string.three)) }
+        btn_four.setOnClickListener { addString(getString(R.string.four)) }
+        btn_five.setOnClickListener { addString(getString(R.string.five)) }
+        btn_six.setOnClickListener { addString(getString(R.string.six)) }
+        btn_seven.setOnClickListener { addString(getString(R.string.seven)) }
+        btn_eight.setOnClickListener { addString(getString(R.string.eight)) }
+        btn_nine.setOnClickListener { addString(getString(R.string.nine)) }
+        btn_zero.setOnClickListener { addString(getString(R.string.zero)) }
+        btn_equally.setOnClickListener { calculate() }
+        btn_all_clean.setOnClickListener { allClean() }
+        btn_delete.setOnClickListener { dropLastNumber() }
+        btn_percent.setOnClickListener { addOperation(getString(R.string.percent)) }
+        btn_division.setOnClickListener { addOperation(getString(R.string.division)) }
+        btn_plus.setOnClickListener { addOperation(getString(R.string.plus)) }
+        btn_minus.setOnClickListener { addOperation(getString(R.string.minus)) }
+        btn_multiplication.setOnClickListener { addOperation(getString(R.string.multiplication)) }
+        btn_dot.setOnClickListener { addString(getString(R.string.dot)) }
     }
 
     private fun allClean() {
         expression = ""
-        tv_result.text = expression
+        render()
     }
 
-    private fun deleteLastChar() {
+    private fun dropLastNumber() {
         expression = expression.dropLast(1)
-        tv_result.text = expression
+        render()
     }
 
     private fun addOperation(string: String) {
         expression += " $string "
-        tv_result.text = expression
+        render()
     }
 
     private fun addString(string: String) {
         expression += string
-        tv_result.text = expression
+        render()
     }
 
     private fun calculate() {
         val list: List<String> = expression.split(" ")
+        if (list.size == 1 || list[2] == "") return
         val firstNum: Float = list[0].toFloat()
         val secondNum: Float = list[2].toFloat()
         val result = when (list[1]) {
@@ -66,7 +71,10 @@ class MainActivity : AppCompatActivity() {
             "%" -> firstNum / 100 * secondNum
             else -> firstNum / secondNum
         }
-        tv_result.text = result.toString()
+        expression = result.toString()
+        if (expression[expression.length - 2].toString() == ".") {
+            expression = expression.dropLast(2)
+        }
+        render()
     }
-
 }
