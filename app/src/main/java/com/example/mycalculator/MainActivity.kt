@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             else -> firstNum / secondNum
         }
         expression = result.toString()
-        if (expression[expression.length - 2].toString() == ".") {
+        if (expression[expression.length - 2].toString() == "." && expression[expression.length - 1].toString() == "0") {
             expression = expression.dropLast(2)
         }
         render()
