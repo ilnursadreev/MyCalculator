@@ -8,9 +8,10 @@
     android:gravity="center">
 
     <TextView
-        android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
         android:text="@string/result"
         android:textAlignment="viewEnd"
         android:textColor="#B12D2D"
@@ -22,7 +23,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/AC"
+            android:id="@+id/btn_all_clean"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -34,7 +35,7 @@
             />
 
         <Button
-            android:id="@+id/delete"
+            android:id="@+id/btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -45,7 +46,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/percent"
+            android:id="@+id/btn_percent"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -56,7 +57,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/division"
+            android:id="@+id/btn_division"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -73,8 +74,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:onClick="addSeven"
-            android:id="@+id/seven"
+            android:id="@+id/btn_seven"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -86,8 +86,7 @@
             />
 
         <Button
-            android:onClick="addEight"
-            android:id="@+id/eight"
+            android:id="@+id/btn_eight"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -98,8 +97,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:onClick="addNine"
-            android:id="@+id/nine"
+            android:id="@+id/btn_nine"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -110,7 +108,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/multiplication"
+            android:id="@+id/btn_multiplication"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -127,8 +125,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:onClick="addFour"
-            android:id="@+id/four"
+            android:id="@+id/btn_four"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -140,8 +137,7 @@
             />
 
         <Button
-            android:onClick="addFive"
-            android:id="@+id/five"
+            android:id="@+id/btn_five"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -152,8 +148,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:onClick="addSix"
-            android:id="@+id/six"
+            android:id="@+id/btn_six"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -164,8 +159,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:onClick=""
-            android:id="@+id/minus"
+            android:id="@+id/btn_minus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -182,8 +176,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:onClick="addOne"
-            android:id="@+id/one"
+            android:id="@+id/btn_one"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -195,8 +188,7 @@
             />
 
         <Button
-            android:onClick="addTwo"
-            android:id="@+id/two"
+            android:id="@+id/btn_two"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -207,8 +199,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:onClick="addThree"
-            android:id="@+id/three"
+            android:id="@+id/btn_three"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -219,7 +210,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/plus"
+            android:id="@+id/btn_plus"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -236,7 +227,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/zero"
+            android:id="@+id/btn_zero"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="8"
@@ -248,7 +239,7 @@
             />
 
         <Button
-            android:id="@+id/dot"
+            android:id="@+id/btn_dot"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -259,7 +250,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/equally"
+            android:id="@+id/btn_equally"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
