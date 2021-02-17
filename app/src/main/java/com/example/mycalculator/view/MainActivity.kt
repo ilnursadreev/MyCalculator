@@ -1,24 +1,40 @@
-package com.example.mycalculator
+package com.example.mycalculator.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.example.mycalculator.R
+import com.example.mycalculator.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    var expression: String = ""
+    private val viewModel by viewModels<MainViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initClickListener()
+        viewModel.expression.observe(this, Observer { number ->
+            setText(number)
+        })
     }
 
-    var expression: String = ""
+    private fun setText(number: String) {
+        tv_result.text = tv_result.text.toString() + number
+    }
 
     private fun render() {
         tv_result.text = expression
     }
 
     private fun initClickListener() {
-        btn_one.setOnClickListener { addString(getString(R.string.one)) }
+        btn_one.setOnClickListener {
+//            addString(getString(R.string.one))
+            viewModel.setNumberToExpression("1")
+        }
         btn_two.setOnClickListener { addString(getString(R.string.two)) }
         btn_three.setOnClickListener { addString(getString(R.string.three)) }
         btn_four.setOnClickListener { addString(getString(R.string.four)) }
